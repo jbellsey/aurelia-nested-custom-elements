@@ -1,0 +1,27 @@
+<template>
+    <section>
+
+        <require from="./custom/outer"></require>
+        <require from="./custom/inner"></require>
+
+        <outer>
+
+            <template replace-part="outer-contents">
+
+                <!-- this line breaks things -->
+                <inner></inner>
+
+                <!-- using <compose> also fails -->
+                <!--<compose view-model="./custom/inner" value.bind="44"></compose>-->
+
+                <p>I'm after the INNER element, just for show.</p>
+
+            </template>
+        </outer>
+
+        <!-- <inner> works fine here, showing that the custom element is properly installed -->
+        <!--<inner></inner>-->
+
+
+    </section>
+</template>
